@@ -12,3 +12,5 @@ for i in array_input:
     for j in i:
         print(j, end=" ")
     print()
+
+
