@@ -17,3 +17,5 @@ def pop(stack):
         return "Empty Stack"
     else:
         return stack.pop()
+
+
