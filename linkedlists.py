@@ -41,3 +41,17 @@ class LL:
             last = last.next
 
         last.next = new_node
+
+    def delete_node(self, position):
+        cur_node = self.head
+        prev = None
+        count = 0
+        while cur_node and count != position:
+            prev = cur_node
+            cur_node = cur_node.next
+            count += 1
+
+        if cur_node is None:
+            return
+        prev.next = cur_node.next
+        cur_node = None
