@@ -1,9 +1,11 @@
 from array import *
 
 # Create array and tranverse
-
+my_array = array("i", [1, 2, 3, 4, 5])
+for i in my_array:
+    print(i)
 # Access indiviual elements through indexes
-
+my_array[1]
 # Append any value to the array
 
 # Insert value in an array
