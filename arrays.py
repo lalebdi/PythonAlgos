@@ -30,9 +30,13 @@ my_array.buffer_info()
 # Check for number of occurences of an element using count
 my_array.count(9)
 # Convert array to string
-
+temp_str = my_array.tostring()
+print(temp_str)
+ints = array('i')
+ints.fromstring(temp_str)
+print(ints)
 # Convert array to a list
-
+my_array.tolist()
 # Append a string to char array
 
 # Slice elements from an array
