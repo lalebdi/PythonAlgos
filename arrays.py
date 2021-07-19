@@ -22,9 +22,9 @@ my_array.remove(2)
 # Remove last array element
 my_array.pop()
 # Fetch any element
-
+my_array.index(5)
 # Reverse an array
-
+my_array.reverse()
 # Get array buffer information
 
 # Check for number of occurences of an element using count
