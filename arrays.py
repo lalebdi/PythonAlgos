@@ -26,9 +26,9 @@ my_array.index(5)
 # Reverse an array
 my_array.reverse()
 # Get array buffer information
-
+my_array.buffer_info()
 # Check for number of occurences of an element using count
-
+my_array.count(9)
 # Convert array to string
 
 # Convert array to a list
