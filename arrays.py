@@ -11,10 +11,12 @@ my_array.append(6)
 # Insert value in an array
 my_array.insert(0, 0)
 # Extend array
-
+second_array = array("i", [10, 11, 12, 13])
+my_array.extend(second_array)
 
 # Add items from list into array
-
+temp_list = [9, 8, 7]
+my_array.fromlist(temp_list)
 # Remove any array element
 
 # Remove last array element
