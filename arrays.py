@@ -40,3 +40,4 @@ my_array.tolist()
 # Append a string to char array
 
 # Slice elements from an array
+my_array[1:4]
