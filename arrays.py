@@ -18,9 +18,9 @@ my_array.extend(second_array)
 temp_list = [9, 8, 7]
 my_array.fromlist(temp_list)
 # Remove any array element
-
+my_array.remove(2)
 # Remove last array element
-
+my_array.pop()
 # Fetch any element
 
 # Reverse an array
