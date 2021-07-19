@@ -7,9 +7,9 @@ for i in my_array:
 # Access indiviual elements through indexes
 my_array[1]
 # Append any value to the array
-
+my_array.append(6)
 # Insert value in an array
-
+my_array.insert(0, 0)
 # Extend array
 
 
