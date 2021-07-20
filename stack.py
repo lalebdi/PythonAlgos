@@ -8,6 +8,12 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
+    def __iter__(self):
+        curNode = self.head
+        while curNode:
+            yield curNode
+            curNode = curNode.next
+
 
 class Stack:
     def __init__(self):
@@ -18,6 +24,16 @@ class Stack:
             return True
         return False
 
+    def push(self, value):
+        node = Node(value)
+        node.next = self.LinkedList.head
+        self.LinkedList.head = node
+
 
 customStack = Stack()
+customStack.push(1)
+customStack.push(2)
+customStack.push(3)
+customStack.push(4)
+print(customStack)
 print(customStack.isEmpty())
