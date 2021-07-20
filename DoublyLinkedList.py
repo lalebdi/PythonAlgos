@@ -4,6 +4,7 @@ class Node:
         self.next = None
         self.prev = None
 
+
 class DoublyLinkedList:
     def __init__(self):
         self.head = None
@@ -23,3 +24,7 @@ class DoublyLinkedList:
         self.head = node
         self.tail = node
         return "The Doubly Linked List created successfully 😊"
+
+doublyLL = DoublyLinkedList()
+doublyLL.createDLL(5)
+print([node.value for node in doublyLL])
