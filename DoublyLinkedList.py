@@ -14,3 +14,12 @@ class DoublyLinkedList:
         while node:
             yield node
             node = node.next
+
+    # Creating the Doubly Linked List
+    def createDLL(self, nodeValue):
+        node = Node(nodeValue)
+        node.prev = None
+        node.next = None
+        self.head = node
+        self.tail = node
+        return "The Doubly Linked List created successfully 😊"
