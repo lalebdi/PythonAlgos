@@ -8,3 +8,6 @@ class TreeNode:
         for child in self.children:
             ret += child.__str__(level + 1)
         return ret
+
+    def addChild(self, TreeNode):
+        self.children.append(TreeNode)
