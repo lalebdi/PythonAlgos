@@ -79,6 +79,11 @@ class LinkedList:
             cur_node = cur_node.next
         return count
 
+    def len_recursive(self, node):
+        if node is None:
+            return 0
+        return 1 + self.len_recursive(node.next)
+
 
 
 llist = LinkedList()
@@ -96,3 +101,4 @@ print("***********************************")
 llist.delete_node("B")
 llist.print_list()
 print(llist.len_iterative())
+print(llist.len_recursive(llist.head))
