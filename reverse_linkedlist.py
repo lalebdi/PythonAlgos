@@ -84,6 +84,31 @@ class LinkedList:
             return 0
         return 1 + self.len_recursive(node.next)
 
+    def print_helper(self, node, name):
+        if node is None:
+            print(name + " : None")
+        else:
+            print(f"{name} : {node.data}")
+
+    def reverse_iterative(self):
+        prev = None
+        cur = self.head
+        while cur:
+            nxt = cur.next
+            cur.next = prev
+            # self.print_helper(prev, "PREV")
+            # self.print_helper(cur, "CUR")
+            # self.print_helper(nxt, "NXT")
+            # print("\n")
+            prev = cur
+            cur = nxt
+        self.head = prev
+
+
+
+
+
+
 
 
 llist = LinkedList()
@@ -92,6 +117,9 @@ llist.append("B")
 llist.append("C")
 llist.append("D")
 llist.print_list()
+print("~~~~~~~~~~~~~~~~~~~~~~~~")
+# llist.reverse_iterative()
+# llist.print_list()
 
 
 
