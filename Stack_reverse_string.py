@@ -1,5 +1,5 @@
 """"
-
+reverse a string using a stack
 """
 
 class Stack:
@@ -22,3 +22,31 @@ class Stack:
     def get_stack(self):
         return self.items
 
+
+def reverse_string(stack, input_str):
+#     Loop throught the string and push content
+    for i in range(len(input_str)):
+        stack.push(input_str[i])
+
+    rev_str = ""
+    while not stack.is_empty():
+        rev_str += stack.pop()
+
+    return rev_str
+
+
+stack = Stack()
+print(reverse_string(stack, "Hello"))
+
+
+
+# def reverse_string(s):
+#     stack = Stack()
+#     for i in s:
+#         stack.push(i)
+#     ans = ""
+#     for i in range(len(stack.get_stack())):
+#         ans += stack.pop()
+#     print(ans)
+#
+# reverse_string("Hello")
