@@ -37,6 +37,41 @@ class LinkedList:
         new_node.next = prev_node.next
         prev_node.next = new_node
 
+    def delete_node(self, key):
+        cur_node = self.head
+        if cur_node and cur_node.data == key:
+            self.head = cur_node.next
+            cur_node = None
+            return
+
+        prev = None
+        while cur_node and cur_node.data != key:
+            prev = cur_node
+            cur_node = cur_node.next
+        if cur_node is None:
+            return
+        prev.next = cur_node.next
+        cur_node = None
+
+    def delete_node_at_position(self, position):
+        cur_node = self.head
+        if position == 0:
+            self.head = cur_node.next
+            return
+
+        prev = None
+        count = 1
+        while cur_node and count != position:
+            prev = cur_node
+            cur_node = cur_node.next
+            count += 1
+
+        if cur_node is None:
+            return
+        prev.next = cur_node.next
+        cur_node = None
+
+
 
 llist = LinkedList()
 llist.append("A")
@@ -48,4 +83,7 @@ llist.prepend("E")
 llist.print_list()
 print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
 llist.insert("D", llist.head.next)
+llist.print_list()
+print("***********************************")
+llist.delete_node("B")
 llist.print_list()
