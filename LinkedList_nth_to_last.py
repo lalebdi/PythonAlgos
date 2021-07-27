@@ -77,7 +77,7 @@ class LinkedList:
     def len_iterative(self):
         count = 0
         cur_node = self.head
-        while cur_node.next:
+        while cur_node:
             count += 1
             cur_node = cur_node.next
 
@@ -87,4 +87,39 @@ class LinkedList:
         if node is None:
             return 0
         return 1 + self.len_recursive(node.next)
+
+    def nth_to_last_node(self, n):
+        total_len = self.len_iterative()
+        cur_node = self.head
+        while cur_node:
+            if total_len == n:
+                print(cur_node.data)
+                return cur_node
+            total_len -= 1
+            cur_node = cur_node.next
+        if cur_node is None:
+            return
+
+
+
+llist = LinkedList()
+llist.append("A")
+llist.append("B")
+llist.append("C")
+llist.append("D")
+llist.print_list()
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+print(llist.nth_to_last_node(2))
+
+
+
+""""
+    def nth_to_last_node(self, n):
+        count = 0
+        cur_node = self.head
+        while cur_node.next and count != n:
+            count += 1
+            cur_node = cur_node.next
+        return cur_node.data
+"""
 
