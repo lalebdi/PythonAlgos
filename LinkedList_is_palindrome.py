@@ -106,6 +106,27 @@ class LinkedList:
             p = p.next
         return True
 
+    def is_palindrome3(self):
+        """" 3 pointers """
+        p = self.head
+        q = self.head # last node
+        prev = []
+        i = 0
+        while q:
+            prev.append(q)
+            q = q.next
+            i += 1
+        q = prev[i - 1]
+        # print(q.data)
+        count = 1
+        while count <= i // 2 + 1:
+            if prev[-count].data != p.data:
+                return False
+            p = p.next
+            count += 1
+        return True
+
+
 
 llist = LinkedList()
 llist.append("R")
@@ -118,5 +139,7 @@ print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 print(llist.is_palindrome1())
 print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
 print(llist.is_palindrome2())
+print("******************************")
+print(llist.is_palindrome3())
 
 
