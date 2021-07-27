@@ -88,6 +88,19 @@ class LinkedList:
             return 0
         return 1 + self.len_recursive(node.next)
 
+    def count_occurrences_iterative(self, data):
+        count = 0
+        cur_node = self.head
+        while cur_node:
+            if cur_node.data == data:
+                count += 1
+            cur_node = cur_node.next
+        return count
+
+    def count_occurrences_recursive(self, node, data):
+        pass
+
+
 
 llist = LinkedList()
 llist.append(1)
@@ -98,3 +111,22 @@ llist.append(1)
 llist.append(4)
 llist.append(1)
 llist.print_list()
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+print(llist.count_occurrences_iterative(1))
+
+
+
+
+""""
+    def count_occurrences_iterative(self, data):
+        occurrence = dict()
+        cur_node = self.head
+        while cur_node:
+            if cur_node.data in occurrence:
+                occurrence[cur_node.data] += 1
+            else:
+                occurrence[cur_node.data] = 1
+            cur_node = cur_node.next
+
+        return occurrence[data]
+"""
