@@ -100,6 +100,21 @@ class LinkedList:
         if cur_node is None:
             return
 
+    def nth_to_last_node2(self, n):
+        p = self.head
+        q = self.head
+        count = 0
+        while q and count < n:
+            q = q.next
+            count += 1
+        if q is None:
+            print("n is greater than the number of nodes in the list")
+            return
+        while p and q:
+            p = p.next
+            q = q.next
+        return p.data
+
 
 
 llist = LinkedList()
@@ -110,8 +125,8 @@ llist.append("D")
 llist.print_list()
 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 print(llist.nth_to_last_node(2))
-
-
+print("***************************")
+print(llist.nth_to_last_node2(2))
 
 """"
     def nth_to_last_node(self, n):
