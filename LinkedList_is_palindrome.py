@@ -84,6 +84,28 @@ class LinkedList:
             return 0
         return 1 + self.len_recursive(node.next)
 
+    def is_palindrome1(self):
+        s = ""
+        p = self.head
+        while p:
+            s += p.data
+            p = p.next
+        return s == s[::-1]
+
+    def is_palindrome2(self):
+        s = []
+        p = self.head
+        while p:
+            s.append(p.data)
+            p = p.next
+        p = self.head
+        while p:
+            data = s.pop()
+            if p.data != data:
+                return False
+            p = p.next
+        return True
+
 
 llist = LinkedList()
 llist.append("R")
@@ -92,5 +114,9 @@ llist.append("D")
 llist.append("A")
 llist.append("R")
 llist.print_list()
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+print(llist.is_palindrome1())
+print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
+print(llist.is_palindrome2())
 
 
