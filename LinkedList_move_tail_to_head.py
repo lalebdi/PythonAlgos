@@ -82,10 +82,23 @@ class LinkedList:
             return 0
         return 1 + self.len_recursive(node.next)
 
+    def tail_to_head(self):
+        last = self.head
+        second_to_last = None
+        while last.next:
+            second_to_last = last
+            last = last.next
+        second_to_last.next = None
+        last.next = self.head
+        self.head = last
+
 
 llist = LinkedList()
 llist.append("A")
 llist.append("B")
 llist.append("C")
 llist.append("D")
+llist.print_list()
+llist.tail_to_head()
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 llist.print_list()
