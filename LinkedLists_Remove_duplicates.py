@@ -90,6 +90,22 @@ class LinkedList:
             return 0
         return 1 + self.len_recursive(node.next)
 
+    def remove_duplicates(self):
+        cur_node = self.head
+        prev = None
+        values = dict()
+
+        while cur_node:
+            if cur_node.data in values:
+                # Remove node
+                prev.next = cur_node.next
+                cur_node = None
+            else:
+                # Have not encoutered element before
+                values[cur_node.data] = 1
+                prev = cur_node
+
+            cur_node = prev.next
 
 
 
@@ -103,5 +119,8 @@ llist.append(4)
 llist.append(2)
 llist.append(2)
 llist.append(4)
+llist.print_list()
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+llist.remove_duplicates()
 llist.print_list()
 
