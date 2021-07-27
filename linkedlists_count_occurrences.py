@@ -98,7 +98,12 @@ class LinkedList:
         return count
 
     def count_occurrences_recursive(self, node, data):
-        pass
+        if not node:
+            return 0
+        if node.data == data:
+            return 1 + self.count_occurrences_recursive(node.next, data)
+        else:
+            return self.count_occurrences_recursive(node.next, data)
 
 
 
@@ -113,6 +118,8 @@ llist.append(1)
 llist.print_list()
 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 print(llist.count_occurrences_iterative(1))
+print("------------------------------")
+print(llist.count_occurrences_recursive(llist.head, 1))
 
 
 
