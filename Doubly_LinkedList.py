@@ -41,6 +41,36 @@ class DoublyLinkedList:
             print(cur_node.data)
             cur_node = cur_node.next
 
+    def add_after_node(self, key, data):
+        cur_node = self.head
+        while cur_node:
+            if cur_node.next is None and cur_node.data == key:
+                self.append(data)
+                return
+            elif cur_node.data == key:
+                new_node = Node(data)
+                nxt_node = cur_node.next
+                cur_node.next = new_node
+                new_node.prev = cur_node
+                new_node.next = nxt_node
+                nxt_node.prev = new_node
+            cur_node = cur_node.next
+
+    def add_before_node(self, key, data):
+        cur_node = self.head
+        while cur_node:
+            if cur_node.prev is None and cur_node.data == key:
+                self.prepend(data)
+                return
+            elif cur_node.data == key:
+                new_node = Node(data)
+                prev_node = cur_node.prev
+                cur_node.prev = new_node
+                new_node.next = cur_node
+                prev_node.next = new_node
+                new_node.prev = prev_node
+            cur_node = cur_node.next
+
 
 dllist = DoublyLinkedList()
 dllist.append(1)
@@ -48,4 +78,11 @@ dllist.append(2)
 dllist.append(3)
 dllist.append(4)
 dllist.prepend(5)
+dllist.print_list()
+print("~~~~~~~~~~~~~~~~~~~~~~")
+dllist.add_after_node(2, 12)
+dllist.print_list()
+print(("^^^^^^^^^^^^^^^^^^^^^"))
+dllist.add_before_node(4, 13)
+dllist.add_before_node(1, 11)
 dllist.print_list()
