@@ -81,6 +81,35 @@ class LinkedList:
             return 0
         return 1 + self.len_recursive(node.next)
 
+    def sum_2_lists(self, llist):
+        p = self.head
+        q = llist.head
+
+        sum_list = LinkedList()
+        carry = 0
+        while p or q:
+            if not p:
+                i = 0
+            else:
+                i = p.data
+            if not q:
+                j = 0
+            else:
+                j = q.data
+            s = i + j + carry
+            if s >= 10:
+                carry = 1
+                remainder = s % 10
+                sum_list.append(remainder)
+            else:
+                carry = 0
+                sum_list.append(s)
+            if p:
+                p = p.next
+            if q:
+                q = q.next
+        sum_list.print_list()
+
 
 llist1 = LinkedList()
 llist1.append(5)
@@ -92,3 +121,5 @@ llist2.append(8)
 llist2.append(4)
 llist2.append(2)
 llist2.print_list()
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`")
+llist1.sum_2_lists(llist2)
