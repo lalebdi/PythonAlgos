@@ -8,7 +8,18 @@ class CircularLinkedList:
     def __init__(self):
         self.head = None
 
+    def prepend(self, data):
+        new_node = Node(data)
+        cur_node = self.head
+        new_node.next = self.head
 
+        if not self.head:
+            new_node.next = new_node
+        else:
+            while cur_node.next != self.head:
+                cur_node = cur_node.next
+            cur_node.next = new_node
+            self.head = new_node
 
     def append(self, data):
         if not self.head:
@@ -21,7 +32,6 @@ class CircularLinkedList:
                 cur_node = cur_node.next
             cur_node.next = new_node
             new_node.next = self.head
-
 
     def print_list(self):
         cur_node = self.head
