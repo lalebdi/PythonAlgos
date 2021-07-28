@@ -1,3 +1,6 @@
+# Given a list of size N and step M
+
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -96,5 +99,41 @@ class CircularLinkedList:
         print("~~~~~~~~~~~~~")
         split_cllist.print_list()
 
+    def remove_node(self, node):
+        if self.head == node:
+            cur_node = self.head
+            while cur_node.next != self.head:
+                cur_node = cur_node.next
+            cur_node.next = self.head.next
+            self.head = self.head.next
+        else:
+            cur_node = self.head
+            prev = None
+            while cur_node.next != self.head:
+                prev = cur_node
+                cur_node = cur_node.next
+                if cur_node == node:
+                    prev.next = cur_node.next
+                    cur_node = cur_node.next
+
+    def josephus_circle(self, step):
+        cur_node = self.head
+        while len(self) > 1:
+            count = 1
+            while count != step:
+                cur_node = cur_node.next
+                count += 1
+            self.remove_node(cur_node)
+            cur_node = cur_node.next
 
 
+
+cllist = CircularLinkedList()
+cllist.append(1)
+cllist.append(2)
+cllist.append(3)
+cllist.append(4)
+cllist.print_list()
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+# cllist.remove_node(cllist.head)
+# cllist.print_list()
