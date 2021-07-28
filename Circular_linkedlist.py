@@ -41,10 +41,32 @@ class CircularLinkedList:
             if cur_node == self.head:
                 break
 
+    def remove(self, key):
+        # removing the head of the list
+        if self.head.data == key:
+            cur_node = self.head
+            while cur_node.next != self.head:
+                cur_node = cur_node.next
+            cur_node.next = self.head.next
+            self.head = self.head.next
+        # The key is located in a node other than the head node or the key doesn't exist
+        else:
+            cur_node = self.head
+            prev = None
+            while cur_node.next != self.head:
+                prev = cur_node
+                cur_node = cur_node.next
+                if cur_node.data == key:
+                    prev.next = cur_node.next
+                    cur_node = cur_node.next
+
 
 cllist = CircularLinkedList()
 cllist.append("C")
 cllist.append("D")
 cllist.prepend("B")
 cllist.prepend("A")
+cllist.print_list()
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+cllist.remove("B")
 cllist.print_list()
