@@ -60,6 +60,19 @@ class CircularLinkedList:
                     prev.next = cur_node.next
                     cur_node = cur_node.next
 
+    def __len__(self): #this will override the len built in function to be specific to this object
+        count = 0
+        cur_node = self.head
+        while cur_node:
+            count += 1
+            cur_node = cur_node.next
+            if cur_node == self.head:
+                break
+        return count
+
+    def split_list(self):
+        pass
+
 
 cllist = CircularLinkedList()
 cllist.append("C")
@@ -68,5 +81,6 @@ cllist.prepend("B")
 cllist.prepend("A")
 cllist.print_list()
 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-cllist.remove("B")
-cllist.print_list()
+# cllist.remove("B")
+# cllist.print_list()
+print(cllist.__len__())
