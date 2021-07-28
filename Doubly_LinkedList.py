@@ -71,6 +71,42 @@ class DoublyLinkedList:
                 new_node.prev = prev_node
             cur_node = cur_node.next
 
+    def delete_node(self, key):
+        cur_node = self.head
+        while cur_node:
+            if cur_node.data == key and cur_node == self.head:
+                if not cur_node.next: # Case 1
+                    cur_node = None
+                    self.head = None
+                    return
+                else: # Case 2
+                    nxt_node = cur_node.next
+                    cur_node.next = None
+                    nxt_node.prev = None
+                    cur_node = None
+                    self.head = nxt_node
+                    return
+            elif cur_node.data == key:
+                if cur_node.next: # Case 3
+                    nxt_node = cur_node.next
+                    prev_node = cur_node.prev
+                    prev_node.next = nxt_node
+                    nxt_node.prev = prev_node
+                    cur_node.next = None
+                    cur_node.prev = None
+                    cur_node = None
+                    return
+                else: # Case 4
+                    prev_node = cur_node.prev
+                    prev_node.next = None
+                    cur_node.next = None
+                    cur_node.prev = None
+                    cur_node = None
+                    return
+            cur_node = cur_node.next
+
+
+
 
 dllist = DoublyLinkedList()
 dllist.append(1)
@@ -82,7 +118,13 @@ dllist.print_list()
 print("~~~~~~~~~~~~~~~~~~~~~~")
 dllist.add_after_node(2, 12)
 dllist.print_list()
-print(("^^^^^^^^^^^^^^^^^^^^^"))
+print("^^^^^^^^^^^^^^^^^^^^^")
 dllist.add_before_node(4, 13)
 dllist.add_before_node(1, 11)
+dllist.print_list()
+print("*********************")
+dllist.delete_node(11)
+dllist.print_list()
+print("======================")
+dllist.delete_node(4)
 dllist.print_list()
