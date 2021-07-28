@@ -8,14 +8,15 @@ class CircularLinkedList:
     def __init__(self):
         self.head = None
 
-    def prepend(self, data):
-        pass
 
-    def append(self, data):
-        pass
 
     def print_list(self):
-        pass
+        cur_node = self.head
+        while cur_node:
+            print(cur_node.data)
+            cur_node = cur_node.next
+            if cur_node == self.head:
+                break
 
 
 cllist = CircularLinkedList()
