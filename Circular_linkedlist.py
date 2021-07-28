@@ -71,8 +71,35 @@ class CircularLinkedList:
         return count
 
     def split_list(self):
-        pass
+        size = len(self)
+        # print(size)
+        if size == 0:
+            return None
+        if size == 1:
+            return self.head
+        mid = size // 2
+        count = 0
 
+        prev = None
+        cur_node = self.head
+
+        while cur_node and count < mid:
+            count += 1
+            prev = cur_node
+            cur_node = cur_node.next
+        # print(prev.data)
+        # print(cur_node.data)
+        prev.next = self.head
+
+        split_cllist = CircularLinkedList()
+        while cur_node.next != self.head:
+            split_cllist.append(cur_node.data)
+            cur_node = cur_node.next
+        split_cllist.append(cur_node.data) # because the while loop will break out before appending the last node
+
+        self.print_list()
+        print("\n")
+        split_cllist.print_list()
 
 cllist = CircularLinkedList()
 cllist.append("C")
@@ -83,4 +110,5 @@ cllist.print_list()
 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 # cllist.remove("B")
 # cllist.print_list()
-print(cllist.__len__())
+print(len(cllist))
+cllist.split_list()
