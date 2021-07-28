@@ -16,3 +16,11 @@ class CircularLinkedList:
 
     def print_list(self):
         pass
+
+
+cllist = CircularLinkedList()
+cllist.append("C")
+cllist.append("D")
+cllist.prepend("B")
+cllist.prepend("A")
+cllist.print_list()
