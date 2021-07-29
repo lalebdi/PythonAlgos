@@ -76,7 +76,7 @@ class DoublyLinkedList:
                 return
             cur_node = cur_node.next
 
-    def delete_node(self, key):
+    def delete_node_key(self, key):
         cur_node = self.head
         while cur_node:
             if cur_node.data == key and cur_node == self.head:
@@ -109,6 +109,50 @@ class DoublyLinkedList:
                     return
             cur_node = cur_node.next
 
+    def delete_node(self, node):
+        cur_node = self.head
+        while cur_node:
+            if cur_node == node and cur_node == self.head:
+                if not cur_node.next:
+                    cur_node = None
+                    self.head = None
+                    return
+                else:
+                    nxt_node = cur_node.next
+                    cur_node.next = None
+                    nxt_node.prev = None
+                    cur_node = None
+                    self.head = nxt_node
+                    return
+            elif cur_node == node:
+                if cur_node.next:
+                    nxt_node = cur_node.next
+                    prev_node = cur_node.prev
+                    prev_node.next = nxt_node
+                    nxt_node.prev = prev_node
+                    cur_node.next = None
+                    cur_node.prev = None
+                    cur_node = None
+                    return
+                else:
+                    prev_node = cur_node.prev
+                    prev_node.next = None
+                    cur_node.prev = None
+                    cur_node = None
+                    return
+            cur_node = cur_node.next
+
+    def remove_duplicates(self):
+        cur_node = self.head
+        seen = dict()
+        while cur_node:
+            if cur_node.data not in seen:
+                seen[cur_node.data] = 1
+                cur_node = cur_node.next
+            else:
+                nxt_node = cur_node.next
+                self.delete_node(cur_node)
+                cur_node = nxt_node
 
 dllist = DoublyLinkedList()
 dllist.append(8)
@@ -121,4 +165,5 @@ dllist.append(4)
 dllist.append(10)
 dllist.append(12)
 dllist.append(12)
+dllist.remove_duplicates()
 dllist.print_list()
