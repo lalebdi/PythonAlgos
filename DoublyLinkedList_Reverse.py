@@ -103,8 +103,24 @@ class DoublyLinkedList:
                     return
             cur_node = cur_node.next
 
+    def reverse(self):
+        tmp = None
+        cur_node = self.head
+        while cur_node:
+            tmp = cur_node.prev
+            cur_node.prev = cur_node.next
+            cur_node.next = tmp
+            cur_node = cur_node.prev
+        if tmp:
+            self.head = tmp.prev
 
 
 
 
-
+dllist = DoublyLinkedList()
+dllist.append("A")
+dllist.append("B")
+dllist.append("C")
+dllist.append("D")
+dllist.reverse()
+dllist.print_list()
