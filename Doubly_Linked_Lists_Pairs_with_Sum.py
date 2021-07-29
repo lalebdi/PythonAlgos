@@ -105,3 +105,27 @@ class DoublyLinkedList:
                     cur_node = None
                     return
             cur_node = cur_node.next
+
+    def pairs_with_sum(self, num_val):
+        pairs = list()
+        p = self.head
+        q = None
+        while p:
+            q = p.next
+            while q:
+                if p.data + q.data == num_val:
+                    pairs.append(f"( {str(p.data)} , {str(q.data)} )")
+                q = q.next
+            p = p.next
+        return pairs
+
+
+
+dllist = DoublyLinkedList()
+dllist.append(1)
+dllist.append(2)
+dllist.append(3)
+dllist.append(4)
+dllist.append(5)
+dllist.print_list()
+print(dllist.pairs_with_sum(5))
