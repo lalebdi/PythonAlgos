@@ -21,11 +21,10 @@ class DoublyLinkedList:
             self.head = new_node
             new_node.next = None
             new_node.prev = None
-            return
         else:
             new_node = Node(data)
             last_node = self.head
-            while last_node:
+            while last_node.next:
                 last_node = last_node.next
             last_node.next = new_node
             new_node.prev = last_node
@@ -110,3 +109,16 @@ class DoublyLinkedList:
                     return
             cur_node = cur_node.next
 
+
+dllist = DoublyLinkedList()
+dllist.append(8)
+dllist.append(4)
+dllist.append(4)
+dllist.append(6)
+dllist.append(4)
+dllist.append(8)
+dllist.append(4)
+dllist.append(10)
+dllist.append(12)
+dllist.append(12)
+dllist.print_list()
