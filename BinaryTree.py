@@ -1,3 +1,22 @@
+class Queue:
+    def __init__(self):
+        self.items = {}
+
+    def enqueue(self, item):
+        self.items.insert(0, item)
+
+    def is_empty(self):
+        return len(self.items) == 0
+
+    def dequeue(self):
+        if not self.is_empty():
+            return self.items.pop()
+
+    def peek(self):
+        if not self.is_empty():
+            return self.items[-1].value # <- the value is because we are using the queue for the nodes below.
+
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -51,6 +70,8 @@ class BinaryTree:
             traversal = self.postorder_print(start.right, traversal)
             traversal += (str(start.value) + "-")
         return traversal
+
+
 
 
 
