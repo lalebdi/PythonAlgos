@@ -16,6 +16,12 @@ class Queue:
         if not self.is_empty():
             return self.items[-1].value # <- the value is because we are using the queue for the nodes below.
 
+    def __len__(self):
+        return self.size()
+
+    def size(self):
+        return len(self.items)
+
 
 class Node:
     def __init__(self, value):
