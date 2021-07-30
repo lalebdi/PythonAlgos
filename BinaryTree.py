@@ -1,6 +1,6 @@
 class Queue:
     def __init__(self):
-        self.items = {}
+        self.items = []
 
     def enqueue(self, item):
         self.items.insert(0, item)
@@ -41,6 +41,8 @@ class BinaryTree:
             return self.inorder_print(tree.root, "")
         elif traversal_type == "postorder":
             return self.postorder_print(tree.root, "")
+        elif traversal_type == "levelorder":
+            return self.levelorder_print(tree.root)
         else:
             print(f"Traversal type {traversal_type} is not supported!!")
 
@@ -77,7 +79,25 @@ class BinaryTree:
             traversal += (str(start.value) + "-")
         return traversal
 
+    def levelorder_print(self, start):
+        if start is None:
+            return
 
+        queue = Queue()
+        queue.enqueue(start)
+
+        traversal = ""
+
+        while len(queue) > 0:
+            traversal += str(queue.peek()) + "-"
+            node = queue.dequeue()
+
+            if node.left:
+                queue.enqueue(node.left)
+            if node.right:
+                queue.enqueue(node.right)
+
+        return traversal
 
 
 
@@ -93,6 +113,7 @@ tree.root.right.right.right = Node(8)
 print(tree.print_tree("preorder"))
 print(tree.print_tree("inorder"))
 print(tree.print_tree("postorder"))
+print(tree.print_tree("levelorder"))
 
 """
 Pre-Order Traversal:
