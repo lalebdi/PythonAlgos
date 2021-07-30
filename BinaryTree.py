@@ -39,7 +39,7 @@ class Stack:
 
     def peek(self):
         if not self.is_empty():
-            return self.items[-1].value
+            return self.items[-1]
 
     def __len__(self):
         return self.size()
@@ -130,19 +130,24 @@ class BinaryTree:
         if start is None:
             return
 
+        queue = Queue()
         stack = Stack()
-        stack.push(start)
+        queue.enqueue(start)
 
         traversal = ""
 
-        while len(stack) > 0:
-            traversal += str(stack.peek()) + "-"
-            node = stack.pop()
+        while len(queue) > 0:
+            node = queue.dequeue()
+            stack.push(node)
 
-            if node.left:
-                stack.push((node.left))
             if node.right:
-                stack.push(node.right)
+                queue.enqueue(node.right)
+            if node.left:
+                queue.enqueue(node.left)
+
+        while len(stack) > 0:
+            node = stack.pop()
+            traversal += str(node.value) + "-"
 
         return traversal
 
@@ -161,7 +166,7 @@ print(tree.print_tree("preorder"))
 print(tree.print_tree("inorder"))
 print(tree.print_tree("postorder"))
 print(tree.print_tree("levelorder"))
-print(tree.print_tree("reverselevel"), "here")
+print(tree.print_tree("reverselevel"))
 
 """
 Pre-Order Traversal:
