@@ -279,7 +279,33 @@ def anagram1(s1, s2):
             return False
     return True
 
-print(anagram1("act", "tac"))
-print(anagram1("madam", "nadam"))
-print(anagram1("practice makes perfect", "perfect makes practice"))
-print(anagram1("allergy", "allergic"))
+# print(anagram1("act", "tac"))
+# print(anagram1("madam", "nadam"))
+# print(anagram1("practice makes perfect", "perfect makes practice"))
+# print(anagram1("allergy", "allergic"))
+
+
+def is_anagram(str_1, str_2):
+    str_1 = str_1.replace(" ", "")
+    str_2 = str_2.replace(" ", "")
+    if len(str_1) != len(str_2):
+        return False
+    str_1 = str_1.lower()
+    str_2 = str_2.lower()
+
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    dict1 = dict.fromkeys(list(alphabet), 0)
+    dict2 = dict.fromkeys(list(alphabet), 0)
+
+    for i in range(len(str_1)):
+        dict1[str_1[i]] += 1
+        dict2[str_2[i]] += 1
+
+    return dict1 == dict2
+
+
+print(is_anagram("act", "tac"))
+print(is_anagram("madam", "nadam"))
+print(is_anagram("practice makes perfect", "perfect makes practice"))
+print(is_anagram("allergy", "allergic"))
+
