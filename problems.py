@@ -95,5 +95,39 @@ def is_palindrome(s):
     return s == s[::-1]
 
 
-print(is_palindrome("madam"))
-print(is_palindrome("nurses run"))
+# print(is_palindrome("madam"))
+# print(is_palindrome("nurses run"))
+# print(is_palindrome("computer"))
+
+"""
+Problem:
+   Given an array of integers, return indices of the two numbers such that they add up to a specific target. 
+   You may assume that each input would have exactly one solution, and you may not use the same element twice. 
+
+"""
+arr1 = [1, 2, 3, 4, 5]
+
+
+def two_sum1(arr, target):
+    # Nested for loops
+    for i in range(len(arr) - 1):
+        for j in range(i + 1, len(arr)):
+            if arr[i] + arr[j] == target:
+                return arr[i], arr[j]
+
+
+print(two_sum1(arr1, 9))
+
+
+def two_sum2(arr, target):
+    nums = dict()
+    for i in range(len(arr)):
+        if arr[i] in nums:
+            print(nums[arr[i]], arr[i])
+            return True
+        else:
+            nums[target - arr[i]] = arr[i]
+    return False
+
+
+print(two_sum2(arr1, 9))
