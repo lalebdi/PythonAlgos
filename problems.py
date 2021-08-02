@@ -359,6 +359,7 @@ Problem:
     You can assume the string has only uppercase and lowercase letters (a-z).
 """
 
+
 def compression(s):
     comp_str = ""
     count = 1
@@ -377,7 +378,19 @@ def compression(s):
         return comp_str
 
 
-print(compression("aabcccccaaa"))
+# print(compression("aabcccccaaa"))
 
 
-compression("aabcccccaaa")
+
+"""
+Problem:
+   String Rotation: Given two strings, s1 and s2, write code to check if s2 is a rotation of s1 
+    (e.g. "waterbottle" is a rotation of "erbottlewat").
+"""
+
+def rotation(s1, s2):
+    arr1 = list(s1)
+    arr2 = list(s2)
+    return sorted(arr1) == sorted(arr2)
+
+print(rotation("waterbottle", "erbottlewat"))
