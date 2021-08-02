@@ -304,8 +304,32 @@ def is_anagram(str_1, str_2):
     return dict1 == dict2
 
 
-print(is_anagram("act", "tac"))
-print(is_anagram("madam", "nadam"))
-print(is_anagram("practice makes perfect", "perfect makes practice"))
-print(is_anagram("allergy", "allergic"))
+# print(is_anagram("act", "tac"))
+# print(is_anagram("madam", "nadam"))
+# print(is_anagram("practice makes perfect", "perfect makes practice"))
+# print(is_anagram("allergy", "allergic"))
 
+
+"""
+Problem:
+   Given a row-wise sorted matrix of size r*c, we need to find the median of the matrix given. 
+   It is assumed that r*c is always odd. 
+
+"""
+
+matrix = [
+    [1, 3, 5],
+    [2, 6, 9],
+    [3, 6, 9]
+]
+
+
+def matrix_median(matrix):
+    arr = list()
+    for i in matrix:
+        arr.extend(i)
+    arr = sorted(arr)
+    middle = len(arr) // 2
+    return arr[middle]
+
+print(matrix_median(matrix))
