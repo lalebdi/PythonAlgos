@@ -218,7 +218,7 @@ def factorial_iterative1(n):
     return ans
 
 
-print(factorial_iterative1(5))
+# print(factorial_iterative1(5))
 
 
 def factorial_recursive1(n):
@@ -227,4 +227,14 @@ def factorial_recursive1(n):
     return n * factorial_recursive1(n - 1)
 
 
-print(factorial_recursive1(5))
+# print(factorial_recursive1(5))
+
+
+def factorial_iterative(n):
+    x = 1
+    for i in range(n, 1, -1):
+        x *= i
+    return x
+
+
+# print(factorial_iterative(5))
