@@ -42,6 +42,25 @@ def permutation(s1, s2):
     return sorted(arr2) == sorted(arr1)
 
 
-print(permutation("driving", "drivign"))
-print(permutation("driving", "ddriving"))
-print(permutation("the cow jumps over the moon.", "the moon jumps over the cow."))
+# print(permutation("driving", "drivign"))
+# print(permutation("driving", "ddriving"))
+# print(permutation("the cow jumps over the moon.", "the moon jumps over the cow."))
+
+
+def is_permutation(str_1, str_2):
+    # remove white space
+    str_1 = str_1.replace(" ", "")
+    str_2 = str_2.replace(" ", "")
+    # Check the lengths
+    if len(str_1) != len(str_2):
+        return False
+    for char in str_1:
+        if char in str_2:
+            str_2 = str_2.replace(char, "")
+
+    return len(str_2) == 0
+
+
+print(is_permutation("driving", "drivign"))
+print(is_permutation("driving", "ddriving"))
+print(is_permutation("the cow jumps over the moon.", "the moon jumps over the cow."))
