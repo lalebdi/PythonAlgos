@@ -459,10 +459,23 @@ Problem:
 
 
 def num_of_ones(num):
-    binary = "{0:b}".format(num)
+    binary = "{0:b}".format(num) # or could use bin(num)
     return binary.count("1")
 
 
 print(num_of_ones(2))
 print(num_of_ones(5))
 print(num_of_ones(11))
+
+# Approach 1: using bin()
+def num_ones(num):
+    one_sum = 0
+    bin_rep = bin(num)[2:]
+    for i in bin_rep:
+        one_sum += int(i)
+    return one_sum
+
+
+print(num_ones(2))
+print(num_ones(5))
+print(num_ones(11))
