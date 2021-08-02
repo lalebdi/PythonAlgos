@@ -479,3 +479,16 @@ def num_ones(num):
 print(num_ones(2))
 print(num_ones(5))
 print(num_ones(11))
+
+# Approach 2: without bin()
+def ones_count(num):
+    one_sum = 0
+    while num:
+        one_sum += num & 1
+        num >>= 1
+    return one_sum
+
+
+print(ones_count(2))
+print(ones_count(5))
+print(ones_count(11))
