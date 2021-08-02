@@ -333,7 +333,7 @@ def matrix_median(matrix):
     return arr[middle]
 
 
-print(matrix_median(matrix))
+# print(matrix_median(matrix))
 
 
 def median_matrix(arr):
@@ -348,4 +348,36 @@ def median_matrix(arr):
         return new_list[len(new_list) // 2]
 
 
-print(median_matrix(matrix))
+# print(median_matrix(matrix))
+
+
+"""
+Problem:
+   String Compression: Implement a method to perform basic string compression using the counts of repeated characters. 
+   For example, the string "aabcccccaaa" would become a2b1c5a3. If the "compressed" string would not become smaller
+    than the original string, your method should return the original string. 
+    You can assume the string has only uppercase and lowercase letters (a-z).
+"""
+
+def compression(s):
+    comp_str = ""
+    count = 1
+
+    for i in range(len(s) - 1):
+        if s[i] == s[i + 1]:
+            count += 1
+        else:
+            comp_str += s[i] + str(count)
+            count = 1
+    comp_str += s[i] + str(count)
+
+    if len(comp_str) >= len(s):
+        return s
+    else:
+        return comp_str
+
+
+print(compression("aabcccccaaa"))
+
+
+compression("aabcccccaaa")
