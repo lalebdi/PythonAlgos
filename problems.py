@@ -21,3 +21,10 @@ def unique_char(word):
 
 print(unique_char("unique"))
 print(unique_char("bear"))
+
+
+def is_unique(s):
+    return len(set(s)) == len(s)
+
+print(is_unique("unique"))
+print(is_unique("bear"))
