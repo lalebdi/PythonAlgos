@@ -381,7 +381,6 @@ def compression(s):
 # print(compression("aabcccccaaa"))
 
 
-
 """
 Problem:
    String Rotation: Given two strings, s1 and s2, write code to check if s2 is a rotation of s1 
@@ -442,6 +441,28 @@ def is_string_rotation(str_1, str_2):
 
     return dict_1 == dict_2
 
+#
+# print(is_string_rotation("waterbottle", "erbottlewat"))
+# print(is_string_rotation("watertables", "erbottlewat"))
 
-print(is_string_rotation("waterbottle", "erbottlewat"))
-print(is_string_rotation("watertables", "erbottlewat"))
+
+"""
+Problem:
+   Find the number of 1s in the binary representation of a number. For example:
+
+    num_ones(2) = 1 -- since "10" is the binary representation of the number "2". 
+
+    num_ones(5) = 2 -- since "101" is the binary representation of the number "5"
+
+    num_ones(11) = 3 -- since "1011" is the binary representation of the number "11"
+"""
+
+
+def num_of_ones(num):
+    binary = "{0:b}".format(num)
+    return binary.count("1")
+
+
+print(num_of_ones(2))
+print(num_of_ones(5))
+print(num_of_ones(11))
