@@ -388,9 +388,60 @@ Problem:
     (e.g. "waterbottle" is a rotation of "erbottlewat").
 """
 
+
 def rotation(s1, s2):
     arr1 = list(s1)
     arr2 = list(s2)
     return sorted(arr1) == sorted(arr2)
 
+
 print(rotation("waterbottle", "erbottlewat"))
+
+
+import string
+
+
+def is_string_rotation1(str_1, str_2):
+    if len(str_1) != len(str_2):
+        return False
+    str_1 = str_1.lower()
+    str_2 = str_2.lower()
+
+    letters = dict()
+
+    for i in str_1:
+        if i in letters:
+            letters[i] += 1
+        else:
+            letters[i] = 1
+
+    for i in str_2:
+        if i in letters:
+            letters[i] -= 1
+        else:
+            return False
+    return True
+
+
+print(is_string_rotation1("waterbottle", "erbottlewat"))
+print(is_string_rotation1("watertables", "erbottlewat"))
+
+
+def is_string_rotation(str_1, str_2):
+    if len(str_1) != len(str_2):
+        return False
+    str_1 = str_1.lower()
+    str_2 = str_2.lower()
+
+    dict_1 = dict.fromkeys(list(string.ascii_lowercase), 0)
+    dict_2 = dict.fromkeys(list(string.ascii_lowercase), 0)
+
+    for i in range(len(str_1)):
+        dict_1[str_1[i]] += 1
+        dict_2[str_2[i]] += 1
+
+    return dict_1 == dict_2
+
+
+print(is_string_rotation("waterbottle", "erbottlewat"))
+print(is_string_rotation("watertables", "erbottlewat"))
