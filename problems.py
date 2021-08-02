@@ -138,7 +138,7 @@ def two_sum2(arr, target):
 """
 Problem:
    Given an array of integers, every element appears twice except for one. Find that single one.
-
+    Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
 """
 arr2 = [1, 3, 11, 2, 7, 1, 3, 2, 7]
 
@@ -155,6 +155,7 @@ def single(arr):
         if v == 1:
             return k
 
+
 print(single(arr2))
 
 
@@ -165,5 +166,16 @@ def single2(arr):
 
 
 print(single2(arr2))
+
+
+def single3(arr):
+    # Using the XOR (^)
+    ans = 0
+    for i in range(len(arr)):
+        ans ^= arr[i]
+
+    return ans
+
+print(single3(arr2))
 
 
