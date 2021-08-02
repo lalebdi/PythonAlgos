@@ -61,6 +61,24 @@ def is_permutation(str_1, str_2):
     return len(str_2) == 0
 
 
-print(is_permutation("driving", "drivign"))
-print(is_permutation("driving", "ddriving"))
-print(is_permutation("the cow jumps over the moon.", "the moon jumps over the cow."))
+# print(is_permutation("driving", "drivign"))
+# print(is_permutation("driving", "ddriving"))
+# print(is_permutation("the cow jumps over the moon.", "the moon jumps over the cow."))
+
+
+"""
+Problem:
+   Given a string, write a function to decide if it is a palindrome. 
+ 
+"""
+
+
+def palindrome(string):
+    # arr1 = list(string)
+    # arr2 = arr1[::-1]
+    # return arr1 == arr2
+    string = string.replace(" ", "")
+    return string == string[::-1]
+
+print(palindrome("madam"))
+print(palindrome("nurses run"))
