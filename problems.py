@@ -156,7 +156,7 @@ def single(arr):
             return k
 
 
-print(single(arr2))
+# print(single(arr2))
 
 
 def single2(arr):
@@ -165,7 +165,7 @@ def single2(arr):
             return i
 
 
-print(single2(arr2))
+# print(single2(arr2))
 
 
 def single3(arr):
@@ -176,6 +176,55 @@ def single3(arr):
 
     return ans
 
-print(single3(arr2))
+
+# print(single3(arr2))
 
 
+"""
+Problem:
+   FizzBuzz
+"""
+
+
+def fizzbuzz(n):
+    arr = list()
+    for i in range(1, n + 1):
+        if i % 3 == 0 and i % 5 == 0:
+            arr.append("FizzBuzz")
+        elif i % 3 == 0:
+            arr.append("Fizz")
+        elif i % 5 == 0:
+            arr.append("Buzz")
+        else:
+            arr.append(i)
+    return arr
+
+
+# print(fizzbuzz(100))
+
+"""
+Problem:
+   Write an iterative and recursive function that implements the factorial of a number 
+
+"""
+
+
+def factorial_iterative1(n):
+    if n <= 1:
+        return 1
+    ans = 1
+    for i in range(1, n + 1):
+        ans *= i
+    return ans
+
+
+print(factorial_iterative1(5))
+
+
+def factorial_recursive1(n):
+    if n <= 1:
+        return 1
+    return n * factorial_recursive1(n - 1)
+
+
+print(factorial_recursive1(5))
