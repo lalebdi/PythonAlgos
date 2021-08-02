@@ -80,5 +80,20 @@ def palindrome(string):
     string = string.replace(" ", "")
     return string == string[::-1]
 
-print(palindrome("madam"))
-print(palindrome("nurses run"))
+# print(palindrome("madam"))
+# print(palindrome("nurses run"))
+
+
+import string
+
+
+def is_palindrome(s):
+    s = s.lower()
+#     remove the punctuation
+    s = s.translate(str.maketrans("", "", string.punctuation))
+    s = s.replace(" ", "")
+    return s == s[::-1]
+
+
+print(is_palindrome("madam"))
+print(is_palindrome("nurses run"))
