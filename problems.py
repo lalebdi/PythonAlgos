@@ -105,7 +105,7 @@ Problem:
    You may assume that each input would have exactly one solution, and you may not use the same element twice. 
 
 """
-arr1 = [1, 2, 3, 4, 5]
+arr1 = [1, 3, 11, 2, 7]
 
 
 def two_sum1(arr, target):
@@ -113,20 +113,22 @@ def two_sum1(arr, target):
     for i in range(len(arr) - 1):
         for j in range(i + 1, len(arr)):
             if arr[i] + arr[j] == target:
-                return arr[i], arr[j]
+                return i, j
 
 
 print(two_sum1(arr1, 9))
 
 
 def two_sum2(arr, target):
+    if len(arr) <= 1:
+        return False
     nums = dict()
     for i in range(len(arr)):
         if arr[i] in nums:
-            print(nums[arr[i]], arr[i])
+            print(nums[arr[i]], i)
             return True
         else:
-            nums[target - arr[i]] = arr[i]
+            nums[target - arr[i]] = i
     return False
 
 
