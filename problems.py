@@ -332,4 +332,20 @@ def matrix_median(matrix):
     middle = len(arr) // 2
     return arr[middle]
 
+
 print(matrix_median(matrix))
+
+
+def median_matrix(arr):
+    if len(arr) == 1:
+        vec = arr[0]
+        return vec[len(vec) // 2]
+    else:
+        new_list = []
+        for row in range(len(arr)):
+            new_list.extend(arr[row])
+        new_list = sorted(new_list)
+        return new_list[len(new_list) // 2]
+
+
+print(median_matrix(matrix))
