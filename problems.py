@@ -116,7 +116,7 @@ def two_sum1(arr, target):
                 return i, j
 
 
-print(two_sum1(arr1, 9))
+# print(two_sum1(arr1, 9))
 
 
 def two_sum2(arr, target):
@@ -132,4 +132,38 @@ def two_sum2(arr, target):
     return False
 
 
-print(two_sum2(arr1, 9))
+# print(two_sum2(arr1, 9))
+
+
+"""
+Problem:
+   Given an array of integers, every element appears twice except for one. Find that single one.
+
+"""
+arr2 = [1, 3, 11, 2, 7, 1, 3, 2, 7]
+
+
+def single(arr):
+    nums = dict()
+    for i in arr:
+        if i in nums:
+            nums[i] += 1
+        else:
+            nums[i] = 1
+
+    for k, v in nums.items():
+        if v == 1:
+            return k
+
+print(single(arr2))
+
+
+def single2(arr):
+    for i in arr:
+        if arr.count(i) == 1:
+            return i
+
+
+print(single2(arr2))
+
+
