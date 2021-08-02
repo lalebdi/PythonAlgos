@@ -252,4 +252,34 @@ def urlify(string):
     string = string.replace(" ", '%20')
     return string
 
-print(urlify("Mr. Tony Stark"))
+
+# print(urlify("Mr. Tony Stark"))
+
+
+"""
+Problem:
+   Given two strings, check whether two given strings are an anagram of each other or not. 
+   An anagram of a string is another string that contains same characters, only the order of characters can be different. 
+   For example, “act” and “tac” are an anagram of each other.
+"""
+
+
+def anagram1(s1, s2):
+    letters = dict()
+    for i in s1:
+        if i in letters:
+            letters[i] += 1
+        else:
+            letters[i] = 1
+
+    for i in s2:
+        if i in letters:
+            letters[i] -= 1
+        else:
+            return False
+    return True
+
+print(anagram1("act", "tac"))
+print(anagram1("madam", "nadam"))
+print(anagram1("practice makes perfect", "perfect makes practice"))
+print(anagram1("allergy", "allergic"))
