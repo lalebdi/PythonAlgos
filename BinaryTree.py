@@ -182,7 +182,6 @@ class BinaryTree:
         return size
 
 
-
 tree = BinaryTree(1)
 tree.root.left = Node(2)
 tree.root.right = Node(3)
@@ -198,6 +197,7 @@ print(tree.print_tree("postorder"))
 print(tree.print_tree("levelorder"))
 print(tree.print_tree("reverselevel"))
 print(tree.height(tree.root))
+print(tree.size())
 
 
 """
