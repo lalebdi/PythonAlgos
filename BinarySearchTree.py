@@ -45,3 +45,14 @@ class BinarySearchTree:
             return self._find(data, cur_node.right)
         if data == cur_node.data:
             return True
+
+
+bst = BinarySearchTree()
+bst.insert(4)
+bst.insert(2)
+bst.insert(8)
+bst.insert(5)
+bst.insert(10)
+
+print(bst.find(8))
+print(bst.find(11))
