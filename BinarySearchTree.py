@@ -1,3 +1,9 @@
+"""
+Binary Search Tree:
+ A Binary Search Tree is a tree data structure in which each node has at most 2 children, left & right.
+"""
+
+
 class Node:
     def __init__(self, data=None):
         self.data = data
