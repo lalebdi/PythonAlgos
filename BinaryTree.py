@@ -159,6 +159,28 @@ class BinaryTree:
 
         return 1 + max(left_height, right_height)
 
+    def size(self):
+        if self.root is None:
+            return 0
+
+        stack = Stack()
+
+        stack.push(self.root)
+
+        size = 1
+
+        while stack:
+            node = stack.pop()
+            if node.left:
+                size += 1
+                stack.push(node.left)
+
+            if node.right:
+                size += 1
+                stack.push(node.right)
+
+        return size
+
 
 
 tree = BinaryTree(1)
@@ -176,6 +198,7 @@ print(tree.print_tree("postorder"))
 print(tree.print_tree("levelorder"))
 print(tree.print_tree("reverselevel"))
 print(tree.height(tree.root))
+
 
 """
 Pre-Order Traversal:
