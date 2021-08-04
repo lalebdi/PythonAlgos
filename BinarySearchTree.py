@@ -23,6 +23,7 @@ class BinarySearchTree:
             self._insert(data, self.root)
 
     def _insert(self, data, cur_node):
+        """" Helper method """
         if data < cur_node.data:
             if cur_node.left is None:
                 cur_node.left = Node(data)
@@ -46,6 +47,7 @@ class BinarySearchTree:
             return None
 
     def _find(self, data, cur_node):
+        """" Helper method """
         if data < cur_node.data and cur_node.left:
             return self._find(data, cur_node.left)
         elif data > cur_node.data and cur_node.right:
