@@ -1,6 +1,7 @@
 """
 Binary Search Tree:
  A Binary Search Tree is a tree data structure in which each node has at most 2 children, left & right.
+ Binary Search Tree differ from binary trees in that the entries are ordered.
 """
 
 
