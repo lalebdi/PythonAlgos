@@ -55,13 +55,25 @@ class BinarySearchTree:
         if data == cur_node.data:
             return True
 
+    def inorder_print_tree(self):
+        if self.root:
+            self._inorder_print_tree(self.root)
+
+    def _inorder_print_tree(self, cur_node):
+        if cur_node:
+            self._inorder_print_tree(cur_node.left)
+            print(str(cur_node.data))
+            self._inorder_print_tree(cur_node.right)
+
 
 bst = BinarySearchTree()
-bst.insert(4)
-bst.insert(2)
 bst.insert(8)
-bst.insert(5)
+bst.insert(3)
 bst.insert(10)
+bst.insert(1)
+bst.insert(6)
+bst.insert(9)
+bst.insert(11)
 
 print(bst.find(8))
 print(bst.find(11))
