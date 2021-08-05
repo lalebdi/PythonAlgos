@@ -65,3 +65,11 @@ bst.insert(10)
 
 print(bst.find(8))
 print(bst.find(11))
+
+
+
+"""
+Binary Search Tree Property:
+ Every node on the right subtree has to be larger than the current node 
+ and every node on the left subtree has to be smaller than the current node.
+"""
