@@ -77,6 +77,8 @@ bst.insert(11)
 
 print(bst.find(8))
 print(bst.find(11))
+print("Below is a valid BST")
+print(bst.inorder_print_tree())
 
 
 
