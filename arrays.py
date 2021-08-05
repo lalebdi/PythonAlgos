@@ -1,11 +1,11 @@
 from array import *
 
-# Create array and tranverse
+# Create array and traverse
 my_array = array("i", [1, 2, 3, 4, 5])
 for i in my_array:
     print(i)
-# Access indiviual elements through indexes
-my_array[1]
+# Access individual elements through indexes
+print(my_array[1])
 # Append any value to the array
 my_array.append(6)
 # Insert value in an array
@@ -27,7 +27,7 @@ my_array.index(5)
 my_array.reverse()
 # Get array buffer information
 my_array.buffer_info()
-# Check for number of occurences of an element using count
+# Check for number of occurrences of an element using count
 my_array.count(9)
 # Convert array to string
 temp_str = my_array.tostring()
@@ -40,4 +40,4 @@ my_array.tolist()
 # Append a string to char array
 
 # Slice elements from an array
-my_array[1:4]
+print(my_array[1:4])
