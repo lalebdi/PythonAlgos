@@ -14,9 +14,11 @@ attendance = set([1, 2, 3, 4, 5, 99])
 
 print(attendance)
 
-print(scores | attendance) # Union
+# Union
+print(scores | attendance)
 
-print(scores & attendance) # Intersection
+# Intersection
+print(scores & attendance)
 
-
-print(scores <= attendance) # compare
+# compare
+print(scores <= attendance)
