@@ -71,9 +71,20 @@ class BinarySearchTree:
 
             if is_satisfied is None:
                 return True
-        return False
+            return False
+        return True # an empty tree is technically satisfied
 
     def _is_bst_satisfied(self, cur_node, data):
+        if cur_node.left:
+            if data > cur_node.left.data:
+                return self._is_bst_satisfied(cur_node.left, cur_node.left.data)
+            else:
+                return False
+        if cur_node.right:
+            if data < cur_node.right.data:
+                return self._is_bst_satisfied(cur_node.right, cur_node.right.data)
+            else:
+                return False
 
 
 bst = BinarySearchTree()
@@ -96,7 +107,8 @@ print("Below is a valid BST")
 print(bst.inorder_print_tree())
 print("Not a BST")
 print(tree.inorder_print_tree())
-
+print("True expected -> ", bst.is_bst_satisfied())
+print("False expected -> ", tree.is_bst_satisfied())
 
 """
 Binary Search Tree Property:
