@@ -72,4 +72,6 @@ print(bst.find(11))
 Binary Search Tree Property:
  Every node on the right subtree has to be larger than the current node 
  and every node on the left subtree has to be smaller than the current node.
+ 
+ BST property is a global property that every binary search tree must satisfy. 
 """
