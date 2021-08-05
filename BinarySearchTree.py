@@ -75,11 +75,17 @@ bst.insert(6)
 bst.insert(9)
 bst.insert(11)
 
+tree = BinarySearchTree()
+tree.root = Node(1)
+tree.root.left = Node(2)
+tree.root.right = Node(3)
+
 print(bst.find(8))
 print(bst.find(11))
 print("Below is a valid BST")
 print(bst.inorder_print_tree())
-
+print("Not a BST")
+print(tree.inorder_print_tree())
 
 
 """
