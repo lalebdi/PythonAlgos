@@ -65,6 +65,16 @@ class BinarySearchTree:
             print(str(cur_node.data))
             self._inorder_print_tree(cur_node.right)
 
+    def is_bst_satisfied(self):
+        if self.root:
+            is_satisfied = self._is_bst_satisfied(self.root, self.root.data)
+
+            if is_satisfied is None:
+                return True
+        return False
+
+    def _is_bst_satisfied(self, cur_node, data):
+
 
 bst = BinarySearchTree()
 bst.insert(8)
