@@ -50,4 +50,14 @@ print(iterative_count_consonants(str_1))
 print(iterative_count_consonants(str_2))
 
 
-def recursive_count_consonants()
+def recursive_count_consonants(input_str):
+    if input_str == "":
+        return 0
+    if input_str[0].lower() not in vowels and input_str[0].isalpha():
+        return 1 + recursive_count_consonants(input_str[1:])
+    else:
+        return recursive_count_consonants(input_str[1:])
+
+
+print(recursive_count_consonants(str_1))
+print(recursive_count_consonants(str_2))
