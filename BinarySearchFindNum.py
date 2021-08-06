@@ -9,4 +9,24 @@ def linear_search(data, target):
             return True
     return False
 
+
 print(linear_search(data, target))
+
+
+# Iterative Binary Search:
+def binary_search_iterative(data, target):
+    low = 0
+    high = len(data) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+        if data[mid] == target:
+            return True
+        elif data[mid] > target:
+            high = mid - 1
+        else:
+            low = mid + 1
+    return False
+
+
+print(binary_search_iterative(data, target))
