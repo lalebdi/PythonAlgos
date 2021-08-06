@@ -25,3 +25,12 @@ def len_iterative(input_str):
 
 
 print(len_iterative(str_1))
+
+
+def recursive_str_len(input_str):
+    if input_str == "":
+        return 0
+    return 1 + recursive_str_len(input_str[1:])
+
+
+print(recursive_str_len(str_1))
