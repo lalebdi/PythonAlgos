@@ -34,3 +34,20 @@ def consonant_recursive(input_str):
 
 print(consonant_recursive(str_1))
 print(consonant_recursive(str_2))
+
+vowels = "aeiou"
+
+
+def iterative_count_consonants(input_str):
+    count = 0
+    for i in input_str:
+        if i.lower() not in vowels and i.isalpha():
+            count += 1
+    return count
+
+
+print(iterative_count_consonants(str_1))
+print(iterative_count_consonants(str_2))
+
+
+def recursive_count_consonants()
