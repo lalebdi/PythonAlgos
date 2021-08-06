@@ -14,3 +14,14 @@ def len_recursive(input_str, l = 0):
 
 print(len(str_1))
 print(len_recursive(str_1))
+
+
+def len_iterative(input_str):
+    count = 0
+    while count < len(input_str):
+        count += 1
+
+    return count
+
+
+print(len_iterative(str_1))
