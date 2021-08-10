@@ -41,7 +41,8 @@ def permuation_check(input_str1, input_str2):
 print(permuation_check(is_permutation_1, is_permutation_2))
 print(permuation_check(not_permutation_1, not_permutation_2))
 
-
+# Time complexity O(n log n) due to sorting
+# Space Complexity O(1)
 def is_perm1(str1, str2):
     str1 = str1.lower()
     str2 = str2.lower()
@@ -62,3 +63,31 @@ def is_perm1(str1, str2):
 
 print(is_perm1(is_permutation_1,is_permutation_2))
 print(is_perm1(not_permutation_1, not_permutation_2))
+
+
+def is_perm2(str1, str2):
+    str1 = str1.lower()
+    str2 = str2.lower()
+
+    if len(str1) != len(str2):
+        return False
+
+    d = dict()
+
+    for i in str1:
+        if i in d:
+            d[i] -= 1
+        else:
+            d[i] = 1
+
+    for i in str2:
+        if i in d:
+            d[i] -= 1
+        else:
+            d[i] = 1
+
+    return all(value == 0 for value in d.values())
+
+
+print(is_perm2(is_permutation_1,is_permutation_2))
+print(is_perm2(not_permutation_1, not_permutation_2))
