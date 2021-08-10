@@ -34,3 +34,28 @@ def is_perm_palin(input_str):
 
 print(is_perm_palin(palin_perm))
 print(is_perm_palin(not_palin_perm))
+
+
+def is_perm_palin2(input_str):
+    input_str = input_str.replace(" ", "")
+    input_str = input_str.lower()
+
+    d = dict()
+
+    for i in input_str:
+        if i in d:
+            d[i] += 1
+        else:
+            d[i] = 1
+
+    odd_count = 0
+    for k, v in d.items():
+        if v % 2 != 0 and odd_count == 0:
+            odd_count += 1
+        elif v % 2 != 0 and odd_count != 0:
+            return False
+
+    return True
+
+print(is_perm_palin2(palin_perm))
+print(is_perm_palin2(not_palin_perm))
