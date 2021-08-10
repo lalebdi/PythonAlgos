@@ -64,7 +64,8 @@ def is_perm1(str1, str2):
 print(is_perm1(is_permutation_1,is_permutation_2))
 print(is_perm1(not_permutation_1, not_permutation_2))
 
-
+# Time complexity O(n)
+# Space complexity O(n)
 def is_perm2(str1, str2):
     str1 = str1.lower()
     str2 = str2.lower()
