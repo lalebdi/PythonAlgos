@@ -30,3 +30,17 @@ print(is_unique1(unique_str))
 print(is_unique1(non_unique_str))
 
 
+def is_unique2(input_str):
+    input_str = input_str.replace(" ", "").lower()
+    input_str = input_str.translate(str.maketrans("", "", string.punctuation))
+
+    for i in  input_str:
+        if input_str.count(i) > 1:
+            return False
+    return True
+
+
+print(is_unique2(unique_str))
+print(is_unique2(non_unique_str))
+
+
