@@ -74,4 +74,16 @@ print(is_unique4(unique_str))
 print(is_unique4(non_unique_str))
 
 
+def is_unique5(input_str):
+    input_str = normalize(input_str)
+    alphabet_string = string.ascii_lowercase
+    for i in input_str:
+        if i in alphabet_string:
+            alphabet_string = alphabet_string.replace(i, "")
+        else:
+            return False
+    return True
 
+
+print(is_unique5(unique_str))
+print(is_unique5(non_unique_str))
