@@ -65,4 +65,13 @@ print(is_unique3(unique_str))
 print(is_unique3(non_unique_str))
 
 
+def is_unique4(input_str):
+    input_str = normalize(input_str)
+    return len(set(input_str)) == len(input_str)
+
+
+print(is_unique4(unique_str))
+print(is_unique4(non_unique_str))
+
+
 
