@@ -13,7 +13,8 @@ import string
 palin_perm = "Tact Coa" # Taco Cat
 not_palin_perm = "This is not a palindrome permutation"
 
-
+# Time complexity  O(n)
+# Space complexity O(n)
 def is_perm_palin(input_str):
     word = input_str.replace(" ", "").lower()
     word = word.translate(str.maketrans("", "", string.punctuation))
