@@ -34,7 +34,7 @@ def is_unique2(input_str):
     input_str = input_str.replace(" ", "").lower()
     input_str = input_str.translate(str.maketrans("", "", string.punctuation))
 
-    for i in  input_str:
+    for i in input_str:
         if input_str.count(i) > 1:
             return False
     return True
@@ -42,5 +42,27 @@ def is_unique2(input_str):
 
 print(is_unique2(unique_str))
 print(is_unique2(non_unique_str))
+
+
+def normalize(input_str):
+    input_str = input_str.replace(" ", "").lower()
+    input_str = input_str.translate(str.maketrans("", "", string.punctuation))
+    return input_str
+
+
+def is_unique3(input_str):
+    input_str = normalize(input_str)
+    d = dict()
+    for i in input_str:
+        if i in d:
+            return False
+        else:
+            d[i] = 1
+    return True
+
+
+print(is_unique3(unique_str))
+print(is_unique3(non_unique_str))
+
 
 
