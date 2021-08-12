@@ -27,4 +27,23 @@ def find_index_of_lowest2(arr):
         if v == lowest:
             return i
 
+
 print(find_index_of_lowest2(ARR))
+
+
+def find(arr):
+    low = 0
+    high = len(arr) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+
+        if arr[mid] > arr[high]:
+            low = mid + 1
+        elif arr[mid] <= high:
+            high = mid - 1
+
+    return low
+
+
+print(find(ARR))
