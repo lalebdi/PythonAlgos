@@ -44,3 +44,9 @@ import bisect
 # the left-most occurrence.
 
 print(bisect.bisect_left(arr, -10))
+print(bisect.bisect_left(arr, 285))
+
+# The bisect_right function returns the insertion point which comes after, or to the right of, any existing entries.
+
+print(bisect.bisect_right(arr, -10))
+print(bisect.bisect_right(arr, 285))
