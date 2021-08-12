@@ -11,3 +11,14 @@ with target = 108, the algorithm would return 3, as the first occurrence of 108 
 
 arr = [-14, -10, 2, 108, 108, 243, 285, 285, 285, 401]
 target = 108
+
+
+def find_target(arr, target):
+    return arr.index(target)
+
+
+print(find_target(arr, target))
+
+
+def find(arr, target):
+    pass
