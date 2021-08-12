@@ -34,3 +34,13 @@ def first_occurence(arr, target):
 
 
 print(first_occurence(arr, 108))
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import bisect
+
+
+# The bisect_left function finds index of the target element.
+# In the event where there are duplicates entries satisfying the target element, the bisect_left function returns
+# the left-most occurrence.
+
+print(bisect.bisect_left(arr, -10))
