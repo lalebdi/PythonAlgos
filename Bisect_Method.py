@@ -50,3 +50,17 @@ print(bisect.bisect_left(arr, 285))
 
 print(bisect.bisect_right(arr, -10))
 print(bisect.bisect_right(arr, 285))
+
+# There is also just a regular default "bisect" function. THis function == "bisect_right".
+
+print(bisect.bisect(arr, -10))
+print(bisect.bisect(arr, 285))
+
+# Given that the list arr is sorted, it is possible to insert elements into arr such that the list remains sorted.
+# Functions "insort_left" and "insort_right" behave in a similar way to "bisect left" and "bisect_right",
+# Only the insort functions insert at the index position.
+print(arr)
+bisect.insort_left(arr, 108)
+print(arr)
+bisect.insort_right(arr, 108)
+print(arr)
