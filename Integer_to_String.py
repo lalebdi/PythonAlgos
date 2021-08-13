@@ -16,7 +16,7 @@ def int_to_str(input_int):
         is_negative = True
         input_int *= -1
     else:
-        is_negative = True
+        is_negative = False
 
     output_str = []
     while input_int > 0:
@@ -24,7 +24,12 @@ def int_to_str(input_int):
         output_str.append(chr(ord("0") + input_int % 10))
         input_int //= 10
 
+    output_str = "".join(output_str[::-1])
+    if is_negative:
+        return "-" + output_str
+    else:
+        return output_str
 
-    return "".join(output_str[::-1])
 
 print(int_to_str(123))
+print(int_to_str(-123))
