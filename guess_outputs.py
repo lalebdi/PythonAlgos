@@ -37,7 +37,8 @@ c = "okay" # b and c are pointing to the same object
 # print(b == c)
 
 """
-chained operations
+Chained Operations
+1 AND True are the same
 """
 
 print((1 == 1) in [1])
@@ -46,4 +47,15 @@ print(1 == (1 in [1]))
 
 print(1 < (0 < 1))
 
-print(1 < 0 < 1)
+print(1 < 0 < 1) # this valued as =>  1 < 0 and 0 < 1
+
+"""
+Dictionary Key Hashing
+"""
+
+d = {}
+d[1] = "hi"
+d[1.0] = "hello"
+d[2 - 1] = "yo"
+
+print(d)
