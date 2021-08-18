@@ -86,3 +86,15 @@ y = False
 
 print(not x == y) # this is evaluated as (not (x == y))
 # print(x == not y)
+print(x == (not y))
+
+"""
+    Guess the output
+"""
+
+a, b = a[b] = {}, 5
+
+print(a, b)
+"""
+    {...} => AKA circular reference: this data structure is the same as the data structure inside of it
+"""
