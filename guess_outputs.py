@@ -70,8 +70,19 @@ all() function:
     Takes an iterable object and tells me if all the values in it are equal to True
 """
 
-print(all([1, 2, 3, False]))
-print(all([1, 2, 3]))
+# print(all([1, 2, 3, False]))
+# print(all([1, 2, 3]))
 # an empty nested list == False
-print(all([[]]))
-print(all([[1]]))
+# print(all([[]]))
+# print(all([[1]]))
+
+"""
+Not:
+    has a lower precedent to the '=='
+"""
+
+x = True
+y = False
+
+print(not x == y) # this is evaluated as (not (x == y))
+# print(x == not y)
