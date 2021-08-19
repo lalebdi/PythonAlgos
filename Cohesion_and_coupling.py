@@ -76,6 +76,13 @@ class VehicleInfo:
         self.electric = electric
         self.catalogue_price = catalogue_price
 
+    def compute_tax(self):
+        tax_percentage = 0.05
+        if self.electric:
+            tax_percentage = 0.02
+
+        return tax_percentage * self.catalogue_price
+
 
 class Vehicle:
     # Structure the data
@@ -114,3 +121,19 @@ class VehicleRegistry:
         license_plate = self.generate_vehicle_license(vehicle_id)
 
         return Vehicle(vehicle_id, license_plate, self.vehicle_info[brand])
+
+
+class Application:
+    def register_vehicle(self, brand: string):
+        # Create registry instance
+        registry = VehicleRegistry()
+
+        # Create a vehicle
+        vehicle = registry.create_vehicle(brand)
+
+        # Print info
+        print("Registration complete")
+        print(f"Brand: {brand}")
+        print(f"ID: {vehicle_id}")
+        print(f"License Plate: {license_plate}")
+        print(f"Payable Tax: {payable_tax}")
