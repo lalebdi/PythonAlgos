@@ -83,6 +83,10 @@ class VehicleInfo:
 
         return tax_percentage * self.catalogue_price
 
+    def print(self):
+        print(f"Brand: {self.brand}")
+        print(f"Payable Tax: {self.compute_tax()}")
+
 
 class Vehicle:
     # Structure the data
@@ -94,6 +98,8 @@ class Vehicle:
         self.id = id
         self.license_plate = license_plate
         self.info = info
+
+
 
 
 class VehicleRegistry:
@@ -133,7 +139,6 @@ class Application:
 
         # Print info
         print("Registration complete")
-        print(f"Brand: {brand}")
+
         print(f"ID: {vehicle_id}")
         print(f"License Plate: {license_plate}")
-        print(f"Payable Tax: {payable_tax}")
