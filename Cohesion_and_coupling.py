@@ -20,6 +20,9 @@ class VehicleRegistry:
 
 class Application:
     def register_vehicle(self, brand: string):
+        # Low cohesion -> Many responsibilities.
+        # High Coupling because it is relying on the VehicleRegistry class
+
         # Create registry instance
         registry = VehicleRegistry()
 
@@ -56,3 +59,22 @@ class Application:
 
 app = Application()
 app.register_vehicle("BMW 5")
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Code after improving the cohesion and coupling:
+# Find where the info is stored and how it is accessed.
+
+
+class VehicleInfo:
+    # Structure the data
+    brand: str
+    catalogue_price: int
+    electric: bool
+
+
+class Vehicle:
+    # Structure the data
+    id: str
+    license_plate: str
+    info: VehicleInfo
+
