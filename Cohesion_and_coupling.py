@@ -99,7 +99,10 @@ class Vehicle:
         self.license_plate = license_plate
         self.info = info
 
-
+    def print(self):
+        print(f"ID: {self.id}")
+        print(f"License Plate: {self.license_plate}")
+        self.info.print()
 
 
 class VehicleRegistry:
@@ -138,7 +141,5 @@ class Application:
         vehicle = registry.create_vehicle(brand)
 
         # Print info
-        print("Registration complete")
+        vehicle.print()
 
-        print(f"ID: {vehicle_id}")
-        print(f"License Plate: {license_plate}")
