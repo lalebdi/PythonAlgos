@@ -29,7 +29,7 @@ class Application:
         # Generate a vehicle id of length 12
         vehicle_id = registry.generate_vehicle_id(12)
 
-        # Generate license plate using the first characters of the vehcile id
+        # Generate license plate using the first characters of the vehicle id
         license_plate = registry.generate_vehicle_license(vehicle_id)
 
         # Compute the catalogue price
@@ -71,6 +71,11 @@ class VehicleInfo:
     catalogue_price: int
     electric: bool
 
+    def __init__(self, brand, catalogue_price, electric):
+        self.brand = brand
+        self.electric = electric
+        self.catalogue_price = catalogue_price
+
 
 class Vehicle:
     # Structure the data
@@ -78,3 +83,34 @@ class Vehicle:
     license_plate: str
     info: VehicleInfo
 
+    def __init__(self, id, license_plate, info):
+        self.id = id
+        self.license_plate = license_plate
+        self.info = info
+
+
+class VehicleRegistry:
+    vehicle_info ={}
+
+    def add_vehicle_info(self, brand, electric, catalogue_price):
+        self.vehicle_info[brand] = VehicleInfo(brand, electric, catalogue_price)
+
+    def __init__(self):
+        self.add_vehicle_info("Tesla Model 3", True, 60000)
+        self.add_vehicle_info("Volkswagen ID3", True, 35000)
+        self.add_vehicle_info("BMW 5", False, 45000)
+
+    def generate_vehicle_id(self, length):
+        return "".join(random.choices(string.ascii_uppercase, k=length))
+
+    def generate_vehicle_license(self, id):
+        return f"{id[:2]}-{''.join(random.choices(string.digits, k=2))}-{''.join(random.choices(string.ascii_uppercase, k=2))}"
+
+    def create_vehicle(self, brand):
+        # Generate a vehicle id of length 12
+        vehicle_id = self.generate_vehicle_id(12)
+
+        # Generate license plate using the first characters of the vehicle id
+        license_plate = self.generate_vehicle_license(vehicle_id)
+
+        return Vehicle(vehicle_id, license_plate, self.vehicle_info[brand])
