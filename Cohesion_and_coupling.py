@@ -57,8 +57,8 @@ class Application:
         print(f"Payable Tax: {payable_tax}")
 
 
-app = Application()
-app.register_vehicle("BMW 5")
+# app = Application()
+# app.register_vehicle("BMW 5")
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Code after improving the cohesion and coupling:
@@ -138,8 +138,12 @@ class Application:
         registry = VehicleRegistry()
 
         # Create a vehicle
-        vehicle = registry.create_vehicle(brand)
+        return registry.create_vehicle(brand)
 
-        # Print info
-        vehicle.print()
 
+
+
+app = Application()
+vehicle = app.register_vehicle("Tesla Model 3")
+# Print info
+vehicle.print()
