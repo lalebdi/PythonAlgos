@@ -115,6 +115,7 @@ class VehicleRegistry:
         self.add_vehicle_info("Tesla Model 3", True, 60000)
         self.add_vehicle_info("Volkswagen ID3", True, 35000)
         self.add_vehicle_info("BMW 5", False, 45000)
+        self.add_vehicle_info("Tesla Model S", True, 75000)
 
     def generate_vehicle_id(self, length):
         return "".join(random.choices(string.ascii_uppercase, k=length))
