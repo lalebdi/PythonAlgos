@@ -37,3 +37,22 @@ class Application:
             catalogue_price = 35000
         elif brand == "BMW 5":
             catalogue_price = 45000
+
+        # Generate the Tax (5% of the price, but for electric it is 2%
+        tax_percentage = 0.05
+        if brand == 'Tesla Model 3' or brand == "Volkswagen ID3":
+            tax_percentage = 0.02
+
+        # Payable tax
+        payable_tax = tax_percentage * catalogue_price
+
+        # Print info
+        print("Registration complete")
+        print(f"Brand: {brand}")
+        print(f"ID: {vehicle_id}")
+        print(f"License Plate: {license_plate}")
+        print(f"Payable Tax: {payable_tax}")
+
+
+app = Application()
+app.register_vehicle("BMW 5")
