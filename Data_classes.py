@@ -1,15 +1,17 @@
-import self as self
+from dataclasses import dataclass
 
 
+@dataclass
 class Person:
-    name: str
+    name: str  # Datatype is important if using dataclass
     jon: str
     age: int
 
-    def __init__(self, name, job, age):
-        self.name = name
-        self.job = job
-        self.age = age
+    # Constructor is no longer needed since we are using dataclass
+    # def __init__(self, name, job, age):
+    #     self.name = name
+    #     self.job = job
+    #     self.age = age
 
 
 person1 = Person("Tony", "Iron Man", 30)
