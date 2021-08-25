@@ -5,7 +5,7 @@ from dataclasses import dataclass, field
 class Person:
     sort_index: int = field(init=False, repr=False)
     name: str  # Datatype is important if using dataclass
-    jon: str
+    job: str
     age: int
     strength: int = 100
 
@@ -19,6 +19,9 @@ class Person:
         # self.sort_index = self.age
         object.__setattr__(self, 'sort_index', self.age)
 
+    def __str__(self):
+        return f"{self.name}, {self.job} ({self.age})"
+
 
 person1 = Person("Tony", "Iron Man", 30)
 person2 = Person("Bruce", "Batman", 25, 99)
@@ -29,4 +32,4 @@ print(id(person3))
 print(person1)
 
 print(person3 == person2)
-print(person1 > person2)
+print(person3 > person2)
