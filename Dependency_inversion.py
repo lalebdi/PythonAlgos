@@ -18,6 +18,14 @@ class LightBulb(Switchable):  # LightBulb implements the interface of Switchable
         print("LightBulb: turned of...")
 
 
+class Fan(Switchable): # Fan implements the interface of Switchable
+    def turn_on(self):
+        print("Fan: turned on...")
+
+    def turn_off(self):
+        print("Fan: turned off...")
+
+
 class ElectricPowerSwitch:  # Dependency Inversion is happening here
     def __init__(self, c: Switchable):
         self.client = c
@@ -38,3 +46,12 @@ l = LightBulb()
 switch = ElectricPowerSwitch(l)
 switch.press()
 switch.press()
+
+f = Fan()
+switch = ElectricPowerSwitch(f)
+switch.press()
+switch.press()
+
+"""
+Instead of have coupled classes, use Dependency Inversion instead to decouple them
+"""
