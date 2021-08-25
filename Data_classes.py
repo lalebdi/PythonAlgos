@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 
 
-@dataclass(order=True)
+@dataclass(order=True, frozen=True)  # Freezing means creating objects that are read only
 class Person:
     sort_index: int = field(init=False, repr=False)
     name: str  # Datatype is important if using dataclass
@@ -16,7 +16,8 @@ class Person:
     #     self.age = age
 
     def __post_init__(self):  # For the sorting index
-        self.sort_index = self.age
+        # self.sort_index = self.age
+        object.__setattr__(self, 'sort_index', self.age)
 
 
 person1 = Person("Tony", "Iron Man", 30)
