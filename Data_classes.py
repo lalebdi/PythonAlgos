@@ -1,8 +1,9 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 
-@dataclass
+@dataclass(order=True)
 class Person:
+    sort_index: int = field(init=False, repr=False)
     name: str  # Datatype is important if using dataclass
     jon: str
     age: int
@@ -12,6 +13,9 @@ class Person:
     #     self.name = name
     #     self.job = job
     #     self.age = age
+
+    def __post_init__(self):
+        self.sort_index = self.age
 
 
 person1 = Person("Tony", "Iron Man", 30)
@@ -23,3 +27,4 @@ print(id(person3))
 print(person1)
 
 print(person3 == person2)
+print(person1 > person2)
