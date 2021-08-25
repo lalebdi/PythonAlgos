@@ -7,6 +7,7 @@ class Person:
     name: str  # Datatype is important if using dataclass
     jon: str
     age: int
+    strength: int = 100
 
     # Constructor is no longer needed since we are using dataclass
     # def __init__(self, name, job, age):
@@ -14,13 +15,13 @@ class Person:
     #     self.job = job
     #     self.age = age
 
-    def __post_init__(self):
+    def __post_init__(self):  # For the sorting index
         self.sort_index = self.age
 
 
 person1 = Person("Tony", "Iron Man", 30)
-person2 = Person("Bruce", "Batman", 25)
-person3 = Person("Bruce", "Batman", 25)
+person2 = Person("Bruce", "Batman", 25, 99)
+person3 = Person("Bruce", "Batman", 25, 99)
 
 print(id(person2))
 print(id(person3))
