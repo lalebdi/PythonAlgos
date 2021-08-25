@@ -1,4 +1,13 @@
-import self
+from abc import ABC, abstractmethod
+
+
+class Switchable(ABC):
+    @abstractmethod
+    def turn_on(self):
+        pass
+
+    def turn_off(self):
+        pass
 
 
 class LightBulb:
