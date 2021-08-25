@@ -10,7 +10,7 @@ class Switchable(ABC):
         pass
 
 
-class LightBulb:
+class LightBulb(Switchable):  # LightBulb implements the interface of Switchable
     def turn_on(self):
         print("LightBulb: turned on...")
 
@@ -18,18 +18,18 @@ class LightBulb:
         print("LightBulb: turned of...")
 
 
-class ElectricPowerSwitch:
-    def __init__(self, l: LightBulb):
-        self.lightBulb = l
+class ElectricPowerSwitch:  # Dependency Inversion is happening here
+    def __init__(self, c: Switchable):
+        self.client = c
         self.on = False
 
     def press(self):
         if self.on:
-            self.lightBulb.turn_off()
+            self.client.turn_off()
             self.on = False
 
         else:
-            self.lightBulb.turn_on()
+            self.client.turn_on()
             self.on = True
 
 
